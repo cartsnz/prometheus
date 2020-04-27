@@ -1,0 +1,29 @@
+{
+  "name": "prometheus",
+  "version": "1.0.0",
+  "description": "Shopify theme built using Theme Kit",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nick-carter-shopify/prometheus.git"
+  },
+  "author": "Nick Carter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nick-carter-shopify/prometheus/issues"
+  },
+  "homepage": "https://github.com/nick-carter-shopify/prometheus#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

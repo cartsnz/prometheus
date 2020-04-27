@@ -1,0 +1,11 @@
+// Hide preview bar
+#preview-bar-iframe {
+  display: none !important;
+}
+
+body {
+  background-color: palegreen;
+  color: grey;
+  width: 80%;
+  border: solid 2px grey;
+}

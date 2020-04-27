@@ -8,8 +8,10 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
+  {% comment %} {{ 'application.scss.css' | asset_url | stylesheet_tag }} {% endcomment %}
   {{ 'application.js' | asset_url | script_tag }}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
 
@@ -25,7 +27,7 @@
     {% endif %}
   {% endfor %}
 
-  <a href="/cart">cart</a>
+  <a href="/cart">Cart</a>
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}

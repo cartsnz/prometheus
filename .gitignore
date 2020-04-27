@@ -1,0 +1,6 @@
+._*
+.DS_Store
+Thumbs.db
+config.yml
+node_modules
+.env
