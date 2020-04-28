@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@shopify/stylelint-plugin",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "color-no-hex": true
+  }
+}
