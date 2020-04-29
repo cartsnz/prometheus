@@ -1,18 +1,35 @@
+/* eslint-disable */
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+var babel = require('gulp-babel');
 
 require('dotenv').config();
 
 gulp.task('sass', function() {
   return gulp.src('./styles/styles.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(rename('theme.css'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./assets/'))
 });
+
+gulp.task('js', function() {
+  return gulp.src('./scripts/app.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(rename('theme.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./assets/'))
+  });
 
 gulp.task('serve', function() {
   browserSync.init({
@@ -44,4 +61,4 @@ gulp.task('serve', function() {
 })
 
 // Run serve task as default gulp task
-gulp.task('default', gulp.series('serve'));
+gulp.task('default', gulp.series('serve', 'js'));

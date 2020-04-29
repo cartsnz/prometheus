@@ -1,11 +1,13 @@
-// Hide preview bar
+/* stylelint-disable */
 #preview-bar-iframe {
   display: none !important;
 }
+/* stylelint-enable */
 
 body {
   background-color: palegreen;
   color: grey;
   width: 80%;
   border: solid 2px grey;
+  padding: 7px;
 }

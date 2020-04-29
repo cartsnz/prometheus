@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@shopify/stylelint-plugin",
+    "stylelint-config-shopify",
     "stylelint-config-prettier"
   ],
   "rules": {

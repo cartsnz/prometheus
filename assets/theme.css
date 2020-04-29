@@ -1,8 +1,13 @@
+/* stylelint-disable */
 #preview-bar-iframe {
   display: none !important; }
 
+/* stylelint-enable */
 body {
   background-color: palegreen;
   color: grey;
   width: 80%;
-  border: solid 2px grey; }
+  border: solid 2px grey;
+  padding: 7px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHNCQUFBO0FBQ0E7RUFDRSx3QkFBd0IsRUFBQTs7QUFFMUIscUJBQUE7QUFFQTtFQUNFLDJCQUEyQjtFQUMzQixXQUFXO0VBQ1gsVUFBVTtFQUNWLHNCQUFzQjtFQUN0QixZQUFZLEVBQUEiLCJmaWxlIjoidGhlbWUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogc3R5bGVsaW50LWRpc2FibGUgKi9cbiNwcmV2aWV3LWJhci1pZnJhbWUge1xuICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG59XG4vKiBzdHlsZWxpbnQtZW5hYmxlICovXG5cbmJvZHkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBwYWxlZ3JlZW47XG4gIGNvbG9yOiBncmV5O1xuICB3aWR0aDogODAlO1xuICBib3JkZXI6IHNvbGlkIDJweCBncmV5O1xuICBwYWRkaW5nOiA3cHg7XG59XG4iXX0= */
