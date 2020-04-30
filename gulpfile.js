@@ -1,3 +1,4 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
 /* eslint-disable */
 
 var gulp = require('gulp');
@@ -57,8 +58,9 @@ gulp.task('serve', function() {
   });
   
   // After initializing browser-sync, watch for sass changes
-  gulp.watch('./styles/**/*.scss', gulp.series('sass'))
+  gulp.watch('./styles/**/*.scss', gulp.series('sass'));
+  gulp.watch('./scripts/**/*.js', gulp.series('js'));
 })
 
 // Run serve task as default gulp task
-gulp.task('default', gulp.series('serve', 'js'));
+gulp.task('default', gulp.series('sass', 'js', 'serve'));
