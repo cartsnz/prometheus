@@ -1,0 +1,45 @@
+{% include 'liquid-variables' %}
+
+{%- style -%}
+
+  {{ font_drop_primary | font_face }}
+  {{ font_drop_secondary | font_face }}
+  {{ font_drop_primary_bold | font_face }}
+  {{ font_drop_primary_bolder | font_face }}
+  {{ font_drop_primary_italic | font_face }}
+  {{ font_drop_primary_bold_italic | font_face }}
+
+  :root {
+    --color-primary: {{ color_primary }};
+    --color-secondary: {{ color_secondary }};
+    --color-headings: {{ color_headings}};
+    --color-sale: {{ color_sale }};
+    --color-background: {{ color_background }};
+    --color-borders: {{ color_borders }};
+    --color-btn: {{ color_btn }};
+    --color-btn-label: {{ color_btn_label }};
+    --color-btn-secondary: {{ color_btn_secondary }};
+    --color-form-text: {{ color_form_text }};
+    --color-form-borders: {{ color_form_borders }};
+    --color-form-background: {{ color_form_background }};
+    --color-overlay-opacity: {{ color_overlay_opacity }};
+    --color-overlay: {{ color_overlay }};
+    --color-overlay-text: {{ color_overlay_text }};
+
+    --font-heading: {{ font_secondary }};
+    --font-heading-weight: {{ font_secondary_weight }};
+    --font-heading-style: {{ font_secondary_style }};
+    --font-body: {{ font_primary }};
+    --font-body-weight: {{ font_primary_weight }};
+    --font-body-style: {{ font_primary_style }};
+    --font-body-bold: {{ font_primary_weight_bold }};
+    --font-body-bolder: {{ font_primary_weight_bolder }};
+    --font-body-italic: {{ font_primary_style_italic }};
+
+    --font-size-base-primary: {{ font_size_base_primary }};
+    --font-size-base-secondary: {{ font_size_base_secondary }};
+
+  }
+{%- endstyle -%}
+
+   

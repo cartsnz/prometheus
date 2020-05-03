@@ -4,6 +4,6 @@
     "stylelint-config-prettier"
   ],
   "rules": {
-    "color-no-hex": true
+    "color-no-hex": null
   }
 }

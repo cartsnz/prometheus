@@ -1,3 +1,11 @@
+@charset 'UTF-8';
+
+// Normalize
+@import './normalize';
+
+/* Settings */
+@import './variables';
+
 /* stylelint-disable */
 #preview-bar-iframe {
   display: none !important;
@@ -5,9 +13,29 @@
 /* stylelint-enable */
 
 body {
-  background-color: palegreen;
-  color: grey;
+  background-color: $color-background;
+  color: $color-primary;
   width: 80%;
-  border: solid 2px grey;
-  padding: 7px;
+  border: solid 2px $color-borders;
+  padding: 15px;
+  font-family: $font-body;
+  font-style: $font-body-style;
+  font-weight: $font-body-weight;
+  font-size: $font-size-base;
+}
+
+h1 {
+  font-family: $font-heading;
+  font-style: $font-heading-style;
+  font-weight: $font-heading-weight;
+  color: $color-headings;
+  font-size: $font-size-heading;
+}
+
+a {
+  font-family: $font-body;
+  font-style: $font-body-style;
+  font-weight: $font-body-bold-weight;
+  text-decoration: none;
+  color: $color-secondary;
 }

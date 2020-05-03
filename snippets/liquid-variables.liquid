@@ -1,0 +1,57 @@
+{%- comment -%}
+Liquid assigned variables and generated values from theme settings
+- This file is used to assign variables which are then used in css-variables.liquid
+{%- endcomment -%}
+
+{%- comment -%}
+  Colors
+{%- endcomment -%}
+
+{%- assign color_primary = settings.color_primary -%}
+{%- assign color_secondary = settings.color_secondary -%}
+{%- assign color_headings = settings.color_headings -%}
+{%- assign color_sale = settings.color_sale -%}
+{%- assign color_background = settings.color_bg -%}
+{%- assign color_borders = settings.color_borders -%}
+{%- assign color_btn = settings.color_btn -%}
+{%- assign color_btn_label = settings.color_btn_label -%}
+{%- assign color_btn_secondary = settings.color_btn_secondary -%}
+{%- assign color_form_text = settings.color_form_text -%}
+{%- assign color_form_borders = settings.color_form_borders -%}
+{%- assign color_form_background = settings.color_form_bg -%}
+
+{%- assign color_overlay_opacity = settings.color_overlay_opacity | divided_by: 100.0 -%}
+{%- assign color_overlay = settings.color_overlay_bg | color_modify: 'alpha', color_overlay_opacity -%}
+{%- assign color_overlay_text = settings.color_overlay_text -%}
+
+{%- comment -%}
+  Typography
+{%- endcomment -%}
+
+{%- assign font_drop_primary = settings.font_primary -%}
+{%- capture font_primary -%}
+  {{ font_drop_primary.family }}, {{ font_drop_primary.fallback_families }}
+{%- endcapture -%}
+
+{%- assign font_drop_secondary = settings.font_secondary -%}
+{%- capture font_secondary -%}
+  {{ font_drop_secondary.family }}, {{ font_drop_secondary.fallback_families }}
+{%- endcapture -%}
+
+{%- assign font_drop_primary_bold = font_drop_primary | font_modify: 'weight', 'bold' -%}
+{%- assign font_drop_primary_bolder = font_drop_primary | font_modify: 'weight', 'bolder' -%}
+{%- assign font_drop_primary_italic = font_drop_primary | font_modify: 'style', 'italic' -%}
+{%- assign font_drop_primary_bold_italic = font_drop_primary_bold | font_modify: 
+'style', 'italic' -%}
+
+{%- assign font_primary_weight = font_drop_primary.weight -%}
+{%- assign font_primary_style = font_drop_primary.style | default: 'normal' -%}
+{%- assign font_primary_style_italic = font_drop_primary_italic.style -%}
+{%- assign font_primary_weight_bold = font_drop_primary_bold.weight | default: 700 -%}
+{%- assign font_primary_weight_bolder = font_drop_primary_bolder.weight | default: 900 -%}
+
+{%- assign font_secondary_weight = font_drop_secondary.weight -%}
+{%- assign font_secondary_style = font_drop_secondary.style -%}
+
+{%- assign font_size_base_primary = settings.font_primary_base_size | append: 'px' -%}
+{%- assign font_size_base_secondary = settings.font_secondary_base_size | append: 'px' -%}

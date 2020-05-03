@@ -11,10 +11,163 @@
     "name": "Colors",
     "settings": [
       {
+        "type": "header",
+        "content": "Text"
+      },
+      {
         "type": "color",
         "id": "color_primary",
         "label": "Primary text",
         "default": "#063C75"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary text",
+        "default": "#E1755E"
+      },
+      {
+        "type": "color",
+        "id": "color_headings",
+        "label": "Headings and links",
+        "default": "#063C75"
+      },
+      {
+        "type": "color",
+        "id": "color_sale",
+        "label": "Sale tag",
+        "default": "#B82B21"
+      },
+      {
+        "type": "header",
+        "content": "Page"
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background",
+        "default": "#F9FBFC"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Borders and lines",
+        "default": "#E1755E"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_btn",
+        "label": "Primary buttons",
+        "default": "#063C75"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_label",
+        "label": "Primary labels",
+        "default": "#F9FBFC"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_secondary",
+        "label": "Secondary labels and borders",
+        "default": "#E1755E"
+      },
+      {
+        "type": "header",
+        "content": "Form Fields"
+      },
+      {
+        "type": "color",
+        "id": "color_form_text",
+        "label": "Text",
+        "default": "#063C75"
+      },
+      {
+        "type": "color",
+        "id": "color_form_borders",
+        "label": "Borders and lines",
+        "default": "#063C75"
+      },
+      {
+        "type": "color",
+        "id": "color_form_bg",
+        "label": "Background",
+        "default": "#EDEDED"
+      },
+      {
+        "type": "header",
+        "content": "Image overlays"
+      },
+      {
+        "type": "color",
+        "id": "color_overlay_text",
+        "label": "Text",
+        "default": "#F9FBFC"
+      },
+      {
+        "type": "color",
+        "id": "color_overlay_bg",
+        "label": "Background",
+        "default": "#EDEDED"
+      },
+      {
+        "type": "range",
+        "id": "color_overlay_opacity",
+        "label": "Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "default": 25
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_primary",
+        "label": "Font",
+        "default": "itc_stone_serif_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_primary_base_size",
+        "label": "Base size",
+        "min": 12,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Headings and Buttons"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_secondary",
+        "label": "Font",
+        "default": "itc_stone_humanist_n5"
+      },
+      {
+        "type": "range",
+        "id": "font_secondary_base_size",
+        "label": "Heading base size",
+        "min": 18,
+        "max": 36,
+        "step": 1,
+        "unit": "px",
+        "default": 24
       }
     ]
   }
