@@ -12,6 +12,10 @@
 }
 /* stylelint-enable */
 
+html {
+  font-size: 62.5%; // Set the font-size equal to 10px
+}
+
 body {
   background-color: $color-background;
   color: $color-primary;
@@ -37,5 +41,9 @@ a {
   font-style: $font-body-style;
   font-weight: $font-body-bold-weight;
   text-decoration: none;
-  color: $color-secondary;
+  color: $color-link;
+
+  &:hover {
+    color: $color-link-hover;
+  }
 }

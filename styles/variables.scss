@@ -13,6 +13,8 @@ $color-borders: var(--color-borders);
 $color-btn: var(--color-btn);
 $color-btn-label: var(--color-btn-label);
 $color-btn-secondary: var(--color-btn-secondary);
+$color-btn-hover: var(--color-btn-hover);
+$color-btn-secondary-hover: var(--color-btn-secondary-hover);
 
 // Form colors
 $color-form-text: var(--color-form-text);
@@ -23,6 +25,10 @@ $color-form-background: var(--color-form-background);
 $color-overlay-opacity: var(--color-overlay-opacity);
 $color-overlay: var(--color-overlay);
 $color-overlay-text: var(--color-overlay-text);
+
+// Link colors
+$color-link: var(--color-link);
+$color-link-hover: var(--color-link-hover);
 
 // Form states
 $color-error: #D0021B;
@@ -51,9 +57,31 @@ $font-size-base: var(--font-size-base-primary);
 $font-size-heading: var(--font-size-base-secondary);
 
 // Transitions
+$transition-duration: 200ms;
+$transition-timing: ease-in-out;
 
 /* Grid */
 // Layout
+$page-width: 1180px;
+$page-width-flush: 1120px;
+$gutter-large: 3rem;
+$gutter-small: 1.5rem;
+$section-spacing: 3.5rem;
+$section-spacing-small: 2rem;
+
 // Breakpoints
+$grid-medium: 46.85rem; // 750px
+$grid-large: 61.85rem; // 990px
+$grid-widescreen: 87.5rem; // 1400px
+
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
 
 /* Misc */
+$border-radius: 2px;

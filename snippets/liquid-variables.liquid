@@ -20,6 +20,27 @@ Liquid assigned variables and generated values from theme settings
 {%- assign color_form_borders = settings.color_form_borders -%}
 {%- assign color_form_background = settings.color_form_bg -%}
 
+{%- assign color_link = settings.color_secondary -%}
+{%- assign color_link_brightness = color_link | color_brightness -%}
+{%- if color_link_brightness <= 26 -%}
+  {%- assign color_link_hover = color_link | color_lighten: 25 -%}
+{%- elsif color_link_brightness <= 65 -%}
+  {%- assign color_link_hover = color_link | color_lighten: 15 -%}
+{%- else -%}
+  {%- assign color_link_hover = color_link | color_darken: 10 -%}  
+{%- endif -%}
+
+{%- assign color_btn_hover = color_link_hover -%}
+
+{%- assign color_btn_secondary_brightness = color_btn_label | color_brightness -%}
+{%- if color_btn_secondary_brightness <= 26 -%}
+  {%- assign color_btn_secondary_hover = color_btn_secondary | color_lighten: 25 -%}
+{%- elsif color_btn_secondary_brightness <= 65 -%}
+  {%- assign color_btn_secondary_hover = color_btn_secondary | color_lighten: 15 -%}  
+{%- else -%}
+  {%- assign color_btn_secondary_hover = color_btn_secondary | color_darken: 10 -%}
+{%- endif -%}
+
 {%- assign color_overlay_opacity = settings.color_overlay_opacity | divided_by: 100.0 -%}
 {%- assign color_overlay = settings.color_overlay_bg | color_modify: 'alpha', color_overlay_opacity -%}
 {%- assign color_overlay_text = settings.color_overlay_text -%}
