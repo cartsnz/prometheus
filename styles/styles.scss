@@ -6,6 +6,9 @@
 /* Settings */
 @import './variables';
 
+/* Tools */
+@import './tools/mixins';
+
 /* stylelint-disable */
 #preview-bar-iframe {
   display: none !important;
@@ -17,15 +20,18 @@ html {
 }
 
 body {
+  @include page-width(0 $gutter-large);
   background-color: $color-background;
   color: $color-primary;
-  width: 80%;
   border: solid 2px $color-borders;
-  padding: 15px;
   font-family: $font-body;
   font-style: $font-body-style;
   font-weight: $font-body-weight;
   font-size: $font-size-base;
+
+  @include media-query($small) {
+    background-color: $color-borders;
+  }
 }
 
 h1 {
@@ -45,5 +51,16 @@ a {
 
   &:hover {
     color: $color-link-hover;
+  }
+}
+
+.img {
+  width: 360px;
+  height: 240px;
+  @include object-fit(cover, top);
+  transition: opacity 0.5s ease-in;
+
+  &:hover {
+    opacity: var(--color-overlay-opacity);
   }
 }

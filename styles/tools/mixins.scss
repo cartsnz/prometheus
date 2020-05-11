@@ -1,0 +1,93 @@
+/**
+ * Media-query generator
+ * 
+ * Iterates over the list of $breakpoints defined in variables.scss
+ * If the argument (i.e. $media-query) is found within the $breakpoints list, then create a media-query for it
+ * For example:
+ * - In $breakpoints is a $breakpoint == $medium-up '(min-width: #{$grid-medium})'
+ * - When this $breakpoint is iterated over, $medium-up is assigned to $name and '(min-width: 46.85rem)' is assigned to $declaration
+ * - The value in $declaration is then used to create the media query
+ *  - i.e. @media only screen and (min-width: 46.85rem) { }
+ *
+ * Usage:
+ * .selector {
+ *   @include media-query($medium-up) {
+ *    color: red;
+ *   }
+ * }
+*/
+
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+
+  }
+}
+
+/**
+ * Page-width
+ *
+ * Used to set a maximum width to a container and add padding ot it to center it
+ * Accepts $padding as an argument (default is set to $gutter-large)
+ *
+ * Usage:
+ * .selector {
+ *  @include page-width(0 1rem);
+ * }
+*/
+
+@mixin page-width($padding: 0 $gutter-large, $max-width: $page-width) {
+  max-width: $page-width;
+  margin: 0 auto;
+  padding: $padding;
+}
+
+/*
+ This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+
+@mixin object-fit($fit: fill, $position: null) {
+  object-fit: $fit;
+
+  @if position {
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+/**
+* Outputs a list of transition properties
+*
+* Accepts:
+* - $transitions: {String} List of transition properties to set
+*
+* Usage:
+* .selector {
+*   @include transition(width, height 0.5s ease-in);
+* }
+*/
+
+@mixin transition($transitions...) {
+  $output: ();
+
+  @each $transition in $transitions {
+    $output: append($output, get-transition-properties($transition), comma);
+  }
+  transition: $output;
+}
