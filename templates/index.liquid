@@ -1,7 +1,7 @@
 <h1>This is a Heading!</h1>
 
 {% for product in collections.frontpage.products limit:4 %}
-  <div>
+  <div class="collection-products">
     <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
     {{ product.price | money }}
     {% unless product.available %}<br><strong>sold out</strong>{% endunless %}

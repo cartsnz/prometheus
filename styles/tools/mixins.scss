@@ -15,7 +15,7 @@
  *    color: red;
  *   }
  * }
-*/
+ */
 
 @mixin media-query($media-query) {
   $breakpoint-found: false;
@@ -45,7 +45,7 @@
  * .selector {
  *  @include page-width(0 1rem);
  * }
-*/
+ */
 
 @mixin page-width($padding: 0 $gutter-large, $max-width: $page-width) {
   max-width: $page-width;
@@ -53,12 +53,12 @@
   padding: $padding;
 }
 
-/*
- This mixin can be used to set the object-fit:
-  @include object-fit(contain);
-  or object-fit and object-position:
-  @include object-fit(cover, top);
-*/
+/**
+ * This mixin can be used to set the object-fit:
+ * @include object-fit(contain);
+ * or object-fit and object-position:
+ * @include object-fit(cover, top);
+ */
 
 @mixin object-fit($fit: fill, $position: null) {
   object-fit: $fit;
@@ -72,22 +72,124 @@
 }
 
 /**
-* Outputs a list of transition properties
-*
-* Accepts:
-* - $transitions: {String} List of transition properties to set
-*
-* Usage:
-* .selector {
-*   @include transition(width, height 0.5s ease-in);
-* }
-*/
+ * Forces an element to self-clear its children
+ *
+ * Usage:
+ * .selector {
+ *  @include clearfix; 
+ * }
+ */
 
-@mixin transition($transitions...) {
-  $output: ();
+/* stylelint-disable */
+@mixin clearfix() {
+  *zoom: 1;
 
-  @each $transition in $transitions {
-    $output: append($output, get-transition-properties($transition), comma);
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
   }
-  transition: $output;
 }
+/* stylelint-enable */
+
+/**
+ * Hide element but make it accessible to screen readers
+ *
+ * Usage:
+ *  .selector {
+ *   @include visually-hidden;
+ *  }
+ */
+
+@mixin visually-hidden {
+  // stylelint-disable-next-line
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  // stylelint-disable-next-line
+  word-wrap: normal !important;
+}
+
+/**
+ * Reverse the properties applied by @include visually-hidden
+ *
+ * Accepts:
+ * - $position: {String} Positioning method for element
+ *
+ * Usage:
+ *  .selector {
+ *   @include visually-shown(relative);
+ *  }
+ */
+
+@mixin visually-shown($position: inherit) {
+  // stylelint-disable-next-line
+  position: $position !important;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+}
+
+/**
+ * Adds an overlay as a pseudo-selector to any element
+ *
+ * Accepts:
+ * - $z-index: {Number} Property z-index for the overlay
+ *
+ * Usage:
+ *  .selector {
+ *   @include overlay(2);
+ *  }
+ */
+
+@mixin overlay($z-index: null) {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-overlay;
+    pointer-events: none;
+
+    @if $z-index {
+      z-index: $z-index;
+    }
+  }
+}
+
+/**
+ * Defines a default placeholder text color/opacity
+ *
+ * Usage:
+ * .selector {
+ *  @include placeholder-text(#000, 0.7);
+ * }
+ */
+
+ @mixin placeholder-text($color: $color-form-text, $opacity: 0.6) {
+   color: $color;
+   opacity: $opacity;
+ }
+
+ /**
+ * Sets a linear-gradient 
+ *
+ * Usage:
+ * .selector {
+ *  @include gradient(#000, 0.7);
+ * }
+ */
+
+ @mixin gradient($side, $from, $to) {
+   background: linear-gradient(to $side, $from 0%, $to 100%);
+ }
+

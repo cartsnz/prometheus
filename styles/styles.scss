@@ -54,6 +54,14 @@ a {
   }
 }
 
+/* stylelint-disable-next-line */
+.collection-products {
+  position: relative;
+  @include gradient(right, $color-background, $color-borders);
+  border: solid 1px $color-borders;
+  @include overlay(2);
+}
+
 .img {
   width: 360px;
   height: 240px;
