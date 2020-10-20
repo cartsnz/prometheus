@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/nick-carter-shopify/prometheus#readme",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "browser-sync": "^2.26.12",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "browser-sync": "^2.26.13",
     "eslint": "^6.8.0",
     "eslint-plugin-shopify": "^35.1.0",
     "gulp": "^4.0.2",
@@ -28,8 +28,8 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "prettier": "^2.1.1",
-    "stylelint": "^13.7.1",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.2",
     "stylelint-config-shopify": "^7.4.0",
     "stylelint-prettier": "^1.1.2"
   },
